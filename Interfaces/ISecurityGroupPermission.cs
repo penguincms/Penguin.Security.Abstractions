@@ -6,7 +6,7 @@ namespace Penguin.Security.Abstractions.Interfaces
 {
     public interface ISecurityGroupPermission
     {
-        ISecurityGroup SecurityGroup { get; set; }
+        ISecurityGroup SecurityGroup { get; }
         PermissionTypes Type { get; }
     }
 }

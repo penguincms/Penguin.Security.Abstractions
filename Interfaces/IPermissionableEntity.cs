@@ -6,6 +6,6 @@ namespace Penguin.Security.Abstractions.Interfaces
 {
     public interface IPermissionableEntity
     {
-        IList<ISecurityGroupPermission> Permissions { get; }
+        IEnumerable<ISecurityGroupPermission> Permissions { get; }
     }
 }

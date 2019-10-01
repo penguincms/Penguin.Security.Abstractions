@@ -1,0 +1,9 @@
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.deps.json
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.dll
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.pdb
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Comments.xml
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.AssemblyInfoInputs.cache
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.AssemblyInfo.cs
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.dll
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.pdb
+C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.csprojAssemblyReference.cache

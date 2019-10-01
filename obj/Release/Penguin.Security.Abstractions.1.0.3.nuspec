@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Penguin.Security.Abstractions</id>
+    <version>1.0.3</version>
+    <authors>Penguin.Security.Abstractions</authors>
+    <owners>Penguin.Security.Abstractions</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">License.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/penguincms/Penguin.Security.Abstractions</projectUrl>
+    <iconUrl>http://www.penguinms.com/client/images/pg.png</iconUrl>
+    <description>Abstractions to use penguin security features without needing penguin entities and repositories</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.dll" target="lib\netstandard2.0\Penguin.Security.Abstractions.dll" />
+    <file src="C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Comments.xml" target="lib\netstandard2.0\Comments.xml" />
+    <file src="C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\License.txt" target="License.txt" />
+  </files>
+</package>

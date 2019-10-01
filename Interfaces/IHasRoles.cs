@@ -10,6 +10,6 @@ namespace Penguin.Security.Abstractions.Interfaces
         /// <summary>
         /// A list of roles that the object belongs to
         /// </summary>
-        IList<IRole> Roles { get; }
+        IEnumerable<IRole> Roles { get; }
     }
 }

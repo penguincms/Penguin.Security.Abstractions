@@ -10,6 +10,6 @@ namespace Penguin.Security.Abstractions.Interfaces
         /// <summary>
         /// A list of groups that the object belongs to
         /// </summary>
-        IList<IGroup> Groups { get; set; }
+        IEnumerable<IGroup> Groups { get; }
     }
 }
