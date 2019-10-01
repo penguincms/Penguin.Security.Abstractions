@@ -109,7 +109,7 @@
             <param name="message">The message</param>
             <param name="innerException">The inner exception</param>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IPermissionableEntityExtensions.AllowsAccessType(Penguin.Security.Abstractions.Interfaces.IPermissionableEntity,Penguin.Security.Abstractions.Interfaces.IUser,Penguin.Security.Abstractions.PermissionTypes)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IPermissionableEntityExtensions.AllowsAccessType``4(Penguin.Security.Abstractions.Interfaces.IPermissionableEntity{``0,``1},Penguin.Security.Abstractions.Interfaces.IUser{``2,``3},Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
             Checks to see if the user specified is allowed to access this object in a given way, based on its groups/roles
             </summary>
@@ -117,70 +117,70 @@
             <param name="type">The type of access to check for</param>
             <returns>Whether or not the given user is allowed the requested access type</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroupGuids(Penguin.Security.Abstractions.Interfaces.IUser)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroupGuids``2(Penguin.Security.Abstractions.Interfaces.IUser{``0,``1})">
             <summary>
             Returns a list of Guids representing the user themselves, all groups, and all roles (inc recursive)
             </summary>
             <param name="target">The user to check</param>
             <returns>A list of Guids representing the user themselves, all groups, and all roles (inc recursive)</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IUser)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``2(Penguin.Security.Abstractions.Interfaces.IUser{``0,``1})">
             <summary>
             Gets a list of security groups for the user containing themselves, all groups, and all roles (inc recursive)
             </summary>
             <param name="target">The user to retrieve the security groups for</param>
             <returns>A list of security groups for the user containing themselves, all groups, and all roles (inc recursive)</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1})">
             <summary>
             Gets a list of security group guids for the target containing all groups, and all roles (inc recursive)
             </summary>
             <param name="target">The user to retrieve the security groups for</param>
             <returns>A list of security group guids for the user containing all groups, and all roles (inc recursive)</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IHasGroups)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``2(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0})">
             <summary>
             Returns a list of Guids representing ONLY the groups (not roles) that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing ONLY the groups (not roles) that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IHasRoles)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``1(Penguin.Security.Abstractions.Interfaces.IHasRoles{``0})">
             <summary>
             Returns a list of Guids representing ONLY the roles (not groups) that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing ONLY the roles (not groups) that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroupGuids(Penguin.Security.Abstractions.Interfaces.IHasGroups)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroupGuids``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0})">
             <summary>
             Returns a list of Guids representing groups AND roles that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing groups AND roles that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroups(Penguin.Security.Abstractions.Interfaces.IHasGroups)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroups``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0})">
             <summary>
             Returns a list of security groups including groups AND roles that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing groups AND roles that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupPermissionExtensions.HasPermission(Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission,Penguin.Security.Abstractions.PermissionTypes)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupPermissionExtensions.HasPermission``2(Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission{``1},Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
             Checks this permission using flags, to determine if this allows for a particular kind of access
             </summary>
             <param name="type">The access type to check for</param>
             <returns>True if the access should be granted</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.AllRoles(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.AllRoles``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1})">
             <summary>
             Returns all roles from associated groups as well as directly assigned
             </summary>
             <param name="target">The object to retrieve roles for</param>
             <returns>An IEnumerable of distinct roles</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup(Penguin.Security.Abstractions.Interfaces.IHasGroups,Penguin.Security.Abstractions.Interfaces.IGroup)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0},``0)">
             <summary>
             Checks the target group list to see if a group exists
             </summary>
@@ -188,7 +188,7 @@
             <param name="thisGroup">The group to check for</param>
             <returns>If the target has the group in its group list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup(Penguin.Security.Abstractions.Interfaces.IHasGroups,System.String)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0},System.String)">
             <summary>
             Checks the target group list to see if a group exists
             </summary>
@@ -196,7 +196,7 @@
             <param name="groupName">The group name to check for</param>
             <returns>If the target has the group in its group list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles,Penguin.Security.Abstractions.Interfaces.IRole)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1},``1)">
             <summary>
             Checks the target role list and roles associated with groups to see if a role exists
             </summary>
@@ -204,7 +204,7 @@
             <param name="thisRole">The role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasRoles,Penguin.Security.Abstractions.Interfaces.IRole)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``1(Penguin.Security.Abstractions.Interfaces.IHasRoles{``0},``0)">
             <summary>
             Checks the target role list to see if a role exists
             </summary>
@@ -212,7 +212,7 @@
             <param name="thisRole">The role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles,System.String)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1},System.String)">
             <summary>
             Checks the target role list and roles associated with groups to see if a role exists
             </summary>
@@ -220,7 +220,7 @@
             <param name="roleName">The name of the role to check for</param>
             <returns>If the target has the role</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasRoles,System.String)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``1(Penguin.Security.Abstractions.Interfaces.IHasRoles{``0},System.String)">
             <summary>
             Checks the target role list to see if a role exists
             </summary>
@@ -228,47 +228,47 @@
             <param name="roleName">The name of the role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroups">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroups`1">
             <summary>
             An interface denoting that an object can be assigned to groups
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasGroups.Groups">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasGroups`1.Groups">
             <summary>
             A list of groups that the object belongs to
             </summary>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles`2">
             <summary>
             Used for objects that contain a list of groups, as well as roles
             </summary>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasRoles">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasRoles`1">
             <summary>
             An interface denoting that the object can be directly assigned roles as permissions
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasRoles.Roles">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasRoles`1.Roles">
             <summary>
             A list of roles that the object belongs to
             </summary>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IUserSession">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IUserSession`1">
             <summary>
             An interface representing an active user session
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession.IsLocalConnection">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession`1.IsLocalConnection">
             <summary>
             True if the connection is coming from LocalHost
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession.IsLoggedIn">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession`1.IsLoggedIn">
             <summary>
             There is an active user session
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession.LoggedInUser">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession`1.LoggedInUser">
             <summary>
             The current logged in user
             </summary>

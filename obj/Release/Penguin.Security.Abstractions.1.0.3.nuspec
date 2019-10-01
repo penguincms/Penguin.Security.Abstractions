@@ -16,8 +16,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.dll" target="lib\netstandard2.0\Penguin.Security.Abstractions.dll" />
-    <file src="C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Comments.xml" target="lib\netstandard2.0\Comments.xml" />
-    <file src="C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\License.txt" target="License.txt" />
+    <file src="C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.dll" target="lib\netstandard2.0\Penguin.Security.Abstractions.dll" />
+    <file src="C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Comments.xml" target="lib\netstandard2.0\Comments.xml" />
+    <file src="C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\License.txt" target="License.txt" />
   </files>
 </package>

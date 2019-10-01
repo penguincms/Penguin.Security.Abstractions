@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Penguin.Security.Abstractions.Interfaces
 {
-    public interface ISecurityGroupPermission
+    public interface ISecurityGroupPermission<TSecurityGroup> where TSecurityGroup : ISecurityGroup
     {
-        ISecurityGroup SecurityGroup { get; }
+        TSecurityGroup SecurityGroup { get; }
         PermissionTypes Type { get; }
     }
 }

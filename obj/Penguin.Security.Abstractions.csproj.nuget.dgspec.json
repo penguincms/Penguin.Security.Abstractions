@@ -1,31 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Loffr\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj": {}
+    "C:\\Users\\anloffredo\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Loffr\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj": {
-      "version": "1.0.3",
+    "C:\\Users\\anloffredo\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj": {
+      "version": "1.1.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Loffr\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj",
+        "projectUniqueName": "C:\\Users\\anloffredo\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj",
         "projectName": "Penguin.Security.Abstractions",
-        "projectPath": "C:\\Users\\Loffr\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj",
-        "packagesPath": "C:\\Users\\Loffr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Loffr\\Documents\\GitHub\\Penguin.Security.Abstractions\\obj\\",
+        "projectPath": "C:\\Users\\anloffredo\\Documents\\GitHub\\Penguin.Security.Abstractions\\Penguin.Security.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\anloffredo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anloffredo\\Documents\\GitHub\\Penguin.Security.Abstractions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Loffr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anloffredo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Nuget": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "c:\\Nuget": {},
+          "C:\\Users\\anloffredo\\AppData\\Roaming\\Penguin\\Nuget\\Debug": {},
+          "C:\\Users\\anloffredo\\AppData\\Roaming\\Penguin\\Nuget\\Release": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -6,6 +6,6 @@ namespace Penguin.Security.Abstractions.Interfaces
 {
     public interface IRequiresRoleAttribute
     {
-        IList<string> AllowedRoles { get; }
+        IReadOnlyList<string> AllowedRoles { get; }
     }
 }

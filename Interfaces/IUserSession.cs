@@ -7,7 +7,7 @@ namespace Penguin.Security.Abstractions.Interfaces
     /// <summary>
     /// An interface representing an active user session
     /// </summary>
-    public interface IUserSession
+    public interface IUserSession<out TUser> where TUser : IUser<IGroup<IRole>, IRole>
     {
         /// <summary>
         /// True if the connection is coming from LocalHost
@@ -22,6 +22,11 @@ namespace Penguin.Security.Abstractions.Interfaces
         /// <summary>
         /// The current logged in user
         /// </summary>
-        IUser LoggedInUser { get; set; }
+        TUser LoggedInUser { get; }
+    }
+
+    public interface IUserSession : IUserSession<IUser<IGroup<IRole>, IRole>>
+    {
+
     }
 }

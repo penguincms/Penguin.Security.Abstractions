@@ -7,3 +7,12 @@ C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netsta
 C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.dll
 C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.pdb
 C:\Users\Loffr\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.csprojAssemblyReference.cache
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.csprojAssemblyReference.cache
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.AssemblyInfoInputs.cache
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.AssemblyInfo.cs
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.dll
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\obj\Release\netstandard2.0\Penguin.Security.Abstractions.pdb
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.deps.json
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.dll
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Penguin.Security.Abstractions.pdb
+C:\Users\anloffredo\Documents\GitHub\Penguin.Security.Abstractions\bin\Release\netstandard2.0\Comments.xml

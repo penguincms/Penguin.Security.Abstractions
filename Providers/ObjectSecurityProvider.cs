@@ -9,10 +9,10 @@ using Penguin.Security.Abstractions.Attributes;
 
 namespace Penguin.Cms.Modules.Security.SecurityProviders
 {
-    public class ObjectSecurityProvider : ISecurityProvider<object>
+    public class ObjectSecurityProvider<TUser> : ISecurityProvider<object> where TUser : IUser<IGroup<IRole>, IRole>
     {
-        protected IUserSession UserSession { get; set; }
-        public ObjectSecurityProvider(IUserSession userSession)
+        protected IUserSession<TUser> UserSession { get; set; }
+        public ObjectSecurityProvider(IUserSession<TUser> userSession)
         {
             UserSession = userSession;
         }

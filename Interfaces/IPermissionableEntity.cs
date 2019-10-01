@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Penguin.Security.Abstractions.Interfaces
 {
-    public interface IPermissionableEntity
+    public interface IPermissionableEntity<out TSecurityGroupPermission, out TSecurityGroup> where TSecurityGroupPermission : ISecurityGroupPermission<TSecurityGroup> where TSecurityGroup : ISecurityGroup
     {
-        IEnumerable<ISecurityGroupPermission> Permissions { get; }
+        IReadOnlyList<TSecurityGroupPermission> Permissions { get; }
     }
 }

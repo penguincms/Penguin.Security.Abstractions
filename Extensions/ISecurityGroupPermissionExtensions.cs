@@ -12,7 +12,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="type">The access type to check for</param>
         /// <returns>True if the access should be granted</returns>
-        public static bool HasPermission(this ISecurityGroupPermission securityGroupPermission, PermissionTypes type)
+        public static bool HasPermission<TSecurityGroupPermission, TSecurityGroup>(this ISecurityGroupPermission<TSecurityGroup> securityGroupPermission, PermissionTypes type) where TSecurityGroupPermission : ISecurityGroupPermission<TSecurityGroup> where TSecurityGroup : ISecurityGroup
         {
             return securityGroupPermission.Type.HasFlag(type);
         }

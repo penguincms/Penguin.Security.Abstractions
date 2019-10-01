@@ -14,7 +14,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The user to check</param>
         /// <returns>A list of Guids representing the user themselves, all groups, and all roles (inc recursive)</returns>
-        public static IEnumerable<Guid> SecurityGroupGuids(this IUser target)
+        public static IEnumerable<Guid> SecurityGroupGuids<TGroup, TRole>(this IUser<TGroup, TRole> target) where TGroup : IGroup<IRole> where TRole : IRole
         {
             Contract.Requires(target != null);
 
@@ -36,7 +36,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The user to retrieve the security groups for</param>
         /// <returns>A list of security groups for the user containing themselves, all groups, and all roles (inc recursive)</returns>
-        public static IEnumerable<ISecurityGroup> SecurityGroups(this IUser target)
+        public static IEnumerable<ISecurityGroup> SecurityGroups<TGroup, TRole>(this IUser<TGroup, TRole> target) where TGroup : IGroup<IRole> where TRole : IRole
         {
             Contract.Requires(target != null);
 
@@ -58,7 +58,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The user to retrieve the security groups for</param>
         /// <returns>A list of security group guids for the user containing all groups, and all roles (inc recursive)</returns>
-        public static IEnumerable<Guid> SecurityGroups(this IHasGroupsAndRoles target)
+        public static IEnumerable<Guid> SecurityGroups<TGroup, TRole>(this IHasGroupsAndRoles<TGroup, TRole> target) where TGroup : IGroup<IRole> where TRole: IRole
         {
             Contract.Requires(target != null);
 
@@ -83,7 +83,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The target to check</param>
         /// <returns>A list of Guids representing ONLY the groups (not roles) that an object belongs to</returns>
-        public static IEnumerable<Guid> SecurityGroups(this IHasGroups target)
+        public static IEnumerable<Guid> SecurityGroups<TGroup, TRole>(this IHasGroups<TGroup> target) where TGroup : IGroup<IRole>
         {
             Contract.Requires(target != null);
 
@@ -103,7 +103,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The target to check</param>
         /// <returns>A list of Guids representing ONLY the roles (not groups) that an object belongs to</returns>
-        public static IEnumerable<Guid> SecurityGroups(this IHasRoles target)
+        public static IEnumerable<Guid> SecurityGroups<TRole>(this IHasRoles<TRole> target) where TRole : IRole
         {
             Contract.Requires(target != null);
 
@@ -123,9 +123,9 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The target to check</param>
         /// <returns>A list of Guids representing groups AND roles that an object belongs to</returns>
-        private static IEnumerable<Guid> GetGroupGuids(IHasGroups target)
+        private static IEnumerable<Guid> GetGroupGuids<TGroup>(IHasGroups<TGroup> target) where TGroup : IGroup<IRole>
         {
-            foreach (IGroup thisGroup in target.Groups)
+            foreach (TGroup thisGroup in target.Groups)
             {
                 yield return thisGroup.Guid;
 
@@ -141,20 +141,20 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The target to check</param>
         /// <returns>A list of Guids representing groups AND roles that an object belongs to</returns>
-        private static IEnumerable<ISecurityGroup> GetGroups(IHasGroups target)
+        private static IEnumerable<ISecurityGroup> GetGroups<TGroup>(IHasGroups<TGroup> target) where TGroup : IGroup<IRole>
         {
-            foreach (ISecurityGroup thisGroup in target.Groups)
+            foreach (TGroup thisGroup in target.Groups)
             {
                 yield return thisGroup;
 
-                foreach (ISecurityGroup r in GetRoles(thisGroup as IGroup))
+                foreach (ISecurityGroup r in GetRoles(thisGroup))
                 {
                     yield return r;
                 }
             }
         }
 
-        private static IEnumerable<Guid> GetRoleGuids(IHasRoles target)
+        private static IEnumerable<Guid> GetRoleGuids<TRole>(IHasRoles<TRole> target) where TRole : IRole
         {
             foreach (IRole r in target.Roles)
             {
@@ -162,7 +162,7 @@ namespace Penguin.Security.Abstractions.Extensions
             }
         }
 
-        private static IEnumerable<ISecurityGroup> GetRoles(IHasRoles target)
+        private static IEnumerable<ISecurityGroup> GetRoles<TRole>(IHasRoles<TRole> target) where TRole : IRole
         {
             foreach (ISecurityGroup r in target.Roles)
             {

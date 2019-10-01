@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Penguin.Security.Abstractions/1.0.3": {
+      "Penguin.Security.Abstractions/1.1.1": {
         "dependencies": {
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.9.4",
           "NETStandard.Library": "2.0.3"
@@ -37,7 +37,7 @@
     }
   },
   "libraries": {
-    "Penguin.Security.Abstractions/1.0.3": {
+    "Penguin.Security.Abstractions/1.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

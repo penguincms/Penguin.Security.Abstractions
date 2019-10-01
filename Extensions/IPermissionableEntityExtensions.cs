@@ -14,11 +14,21 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <param name="user">The user to check for access</param>
         /// <param name="type">The type of access to check for</param>
         /// <returns>Whether or not the given user is allowed the requested access type</returns>
-        public static bool AllowsAccessType(this IPermissionableEntity source, IUser user, PermissionTypes type)
+        public static bool AllowsAccessType<TSecurityGroupPermission, TSecurityGroup, TGroup, TRole>(this IPermissionableEntity<TSecurityGroupPermission, TSecurityGroup> source, IUser<TGroup, TRole> user, PermissionTypes type) where TSecurityGroupPermission : ISecurityGroupPermission<TSecurityGroup> where TSecurityGroup : ISecurityGroup where TGroup : IGroup<IRole> where TRole : IRole
         {
-            foreach(ISecurityGroup securityGroup in user.SecurityGroups())
+            if (source is null)
             {
-                if(source.Permissions.Any(sg => sg.HasPermission(type) && sg.SecurityGroup.ExternalId == securityGroup.ExternalId))
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (user is null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            foreach (TSecurityGroup securityGroup in user.SecurityGroups())
+            {
+                if(source.Permissions.Any(sg => sg.HasPermission<TSecurityGroupPermission, TSecurityGroup>(type) && sg.SecurityGroup.ExternalId == securityGroup.ExternalId))
                 {
                     return true;
                 }
