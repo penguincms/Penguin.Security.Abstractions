@@ -5,11 +5,11 @@ namespace Penguin.Security.Abstractions.Interfaces
     /// <summary>
     /// An interface denoting that an object can be assigned to groups
     /// </summary>
-    public interface IHasGroups<out TGroup> where TGroup : IGroup<IRole>
+    public interface IHasGroups
     {
         /// <summary>
         /// A list of groups that the object belongs to
         /// </summary>
-        IReadOnlyList<TGroup> Groups { get; }
+        IReadOnlyList<IGroup> Groups { get; }
     }
 }

@@ -4,12 +4,11 @@ using System.Text;
 
 namespace Penguin.Security.Abstractions.Interfaces
 {
-    public interface IGroup<out TRole> : ISecurityGroup, IHasRoles<TRole> where TRole : IRole
+    /// <summary>
+    /// An interface representing a collection of roles
+    /// </summary>
+    public interface IGroup : ISecurityGroup, IHasRoles
     {
     }
 
-    public interface IGroup : IGroup<IRole>
-    {
-
-    }
 }

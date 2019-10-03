@@ -9,13 +9,28 @@ using Penguin.Security.Abstractions.Attributes;
 
 namespace Penguin.Cms.Modules.Security.SecurityProviders
 {
-    public class ObjectSecurityProvider<TUser> : ISecurityProvider<object> where TUser : IUser<IGroup<IRole>, IRole>
+    /// <summary>
+    /// Checks permission types for an object based on RequiresRole attributes
+    /// </summary>
+    public class ObjectSecurityProvider : ISecurityProvider<object>
     {
-        protected IUserSession<TUser> UserSession { get; set; }
-        public ObjectSecurityProvider(IUserSession<TUser> userSession)
+        private IUserSession UserSession { get; set; }
+
+        /// <summary>
+        /// Constructs a new instance using the specified user session
+        /// </summary>
+        /// <param name="userSession">The user session to use when checking access</param>
+        public ObjectSecurityProvider(IUserSession userSession)
         {
             UserSession = userSession;
         }
+
+        /// <summary>
+        /// Checks for access using the provided user session, and Requires Role attributes on the object
+        /// </summary>
+        /// <param name="entity">The entity to check access for</param>
+        /// <param name="permissionTypes">The type of permission being checked for</param>
+        /// <returns>True if access is allowed</returns>
         public bool CheckAccess(object entity, PermissionTypes permissionTypes = PermissionTypes.Read)
         {
             if(entity is null)
@@ -43,8 +58,23 @@ namespace Penguin.Cms.Modules.Security.SecurityProviders
             
             return false;
         }
+
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        /// <param name="entity">Not implemented</param>
         public void SetLoggedIn(object entity) => throw new NotImplementedException();
+
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        /// <param name="entity">Not implemented</param>
         public void SetPublic(object entity) => throw new NotImplementedException();
+
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        /// <param name="o">Not implemented</param>
         public void SetDefaultPermissions(params object[] o) => throw new NotImplementedException();
     }
 }

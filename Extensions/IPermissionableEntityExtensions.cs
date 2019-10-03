@@ -6,7 +6,9 @@ using System.Text;
 
 namespace Penguin.Security.Abstractions.Extensions
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static class IPermissionableEntityExtensions
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
         /// <summary>
         /// Checks to see if the user specified is allowed to access this object in a given way, based on its groups/roles
@@ -14,7 +16,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <param name="user">The user to check for access</param>
         /// <param name="type">The type of access to check for</param>
         /// <returns>Whether or not the given user is allowed the requested access type</returns>
-        public static bool AllowsAccessType<TSecurityGroupPermission, TSecurityGroup, TGroup, TRole>(this IPermissionableEntity<TSecurityGroupPermission, TSecurityGroup> source, IUser<TGroup, TRole> user, PermissionTypes type) where TSecurityGroupPermission : ISecurityGroupPermission<TSecurityGroup> where TSecurityGroup : ISecurityGroup where TGroup : IGroup<IRole> where TRole : IRole
+        public static bool AllowsAccessType(this IPermissionableEntity source, IUser user, PermissionTypes type) 
         {
             if (source is null)
             {
@@ -26,9 +28,9 @@ namespace Penguin.Security.Abstractions.Extensions
                 throw new ArgumentNullException(nameof(user));
             }
 
-            foreach (TSecurityGroup securityGroup in user.SecurityGroups())
+            foreach (ISecurityGroup securityGroup in user.SecurityGroups())
             {
-                if(source.Permissions.Any(sg => sg.HasPermission<TSecurityGroupPermission, TSecurityGroup>(type) && sg.SecurityGroup.ExternalId == securityGroup.ExternalId))
+                if(source.Permissions.Any(sg => sg.HasPermission(type) && sg.SecurityGroup.ExternalId == securityGroup.ExternalId))
                 {
                     return true;
                 }

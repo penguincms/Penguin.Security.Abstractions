@@ -4,8 +4,14 @@ using System.Text;
 
 namespace Penguin.Security.Abstractions.Interfaces
 {
-    public interface IPermissionableEntity<out TSecurityGroupPermission, out TSecurityGroup> where TSecurityGroupPermission : ISecurityGroupPermission<TSecurityGroup> where TSecurityGroup : ISecurityGroup
+    /// <summary>
+    /// An interface representing an object that can be assigned permissions
+    /// </summary>
+    public interface IPermissionableEntity 
     {
-        IReadOnlyList<TSecurityGroupPermission> Permissions { get; }
+        /// <summary>
+        /// A list of permissions assigned to the object
+        /// </summary>
+        IReadOnlyList<ISecurityGroupPermission> Permissions { get; }
     }
 }

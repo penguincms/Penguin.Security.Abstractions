@@ -109,7 +109,7 @@
             <param name="message">The message</param>
             <param name="innerException">The inner exception</param>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IPermissionableEntityExtensions.AllowsAccessType``4(Penguin.Security.Abstractions.Interfaces.IPermissionableEntity{``0,``1},Penguin.Security.Abstractions.Interfaces.IUser{``2,``3},Penguin.Security.Abstractions.PermissionTypes)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IPermissionableEntityExtensions.AllowsAccessType(Penguin.Security.Abstractions.Interfaces.IPermissionableEntity,Penguin.Security.Abstractions.Interfaces.IUser,Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
             Checks to see if the user specified is allowed to access this object in a given way, based on its groups/roles
             </summary>
@@ -117,70 +117,109 @@
             <param name="type">The type of access to check for</param>
             <returns>Whether or not the given user is allowed the requested access type</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroupGuids``2(Penguin.Security.Abstractions.Interfaces.IUser{``0,``1})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroupGuids(Penguin.Security.Abstractions.Interfaces.IUser)">
             <summary>
             Returns a list of Guids representing the user themselves, all groups, and all roles (inc recursive)
             </summary>
             <param name="target">The user to check</param>
             <returns>A list of Guids representing the user themselves, all groups, and all roles (inc recursive)</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``2(Penguin.Security.Abstractions.Interfaces.IUser{``0,``1})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IUser)">
             <summary>
             Gets a list of security groups for the user containing themselves, all groups, and all roles (inc recursive)
             </summary>
             <param name="target">The user to retrieve the security groups for</param>
             <returns>A list of security groups for the user containing themselves, all groups, and all roles (inc recursive)</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles)">
             <summary>
             Gets a list of security group guids for the target containing all groups, and all roles (inc recursive)
             </summary>
             <param name="target">The user to retrieve the security groups for</param>
             <returns>A list of security group guids for the user containing all groups, and all roles (inc recursive)</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``2(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IHasGroups)">
             <summary>
             Returns a list of Guids representing ONLY the groups (not roles) that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing ONLY the groups (not roles) that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups``1(Penguin.Security.Abstractions.Interfaces.IHasRoles{``0})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.SecurityGroups(Penguin.Security.Abstractions.Interfaces.IHasRoles)">
             <summary>
             Returns a list of Guids representing ONLY the roles (not groups) that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing ONLY the roles (not groups) that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroupGuids``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroupGuids(Penguin.Security.Abstractions.Interfaces.IHasGroups)">
             <summary>
             Returns a list of Guids representing groups AND roles that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing groups AND roles that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroups``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupExtensions.GetGroups(Penguin.Security.Abstractions.Interfaces.IHasGroups)">
             <summary>
             Returns a list of security groups including groups AND roles that an object belongs to
             </summary>
             <param name="target">The target to check</param>
             <returns>A list of Guids representing groups AND roles that an object belongs to</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupPermissionExtensions.HasPermission``2(Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission{``1},Penguin.Security.Abstractions.PermissionTypes)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityGroupPermissionExtensions.HasPermission(Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission,Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
             Checks this permission using flags, to determine if this allows for a particular kind of access
             </summary>
             <param name="type">The access type to check for</param>
             <returns>True if the access should be granted</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.AllRoles``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1})">
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityProviderExtensions.TrySetPublic``1(Penguin.Security.Abstractions.Interfaces.ISecurityProvider{``0},``0)">
+            <summary>
+            Assigns public read permissions for the object if the provider is not null
+            </summary>
+            <param name="provider">The provider to use try and use for this check</param>
+            <param name="entity">The entity to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityProviderExtensions.TrySetLoggedIn``1(Penguin.Security.Abstractions.Interfaces.ISecurityProvider{``0},``0)">
+            <summary>
+            Requires a registered and logged in account for read access if the provider is not null
+            </summary>
+            <param name="provider">The provider to use try and use for this check</param>
+            <param name="entity">The entity to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityProviderExtensions.TryCheckAccess``1(Penguin.Security.Abstractions.Interfaces.ISecurityProvider{``0},``0,Penguin.Security.Abstractions.PermissionTypes)">
+            <summary>
+            Checks the entity for specified permissions against the current session user if the provider is not null
+            </summary>
+            <param name="provider">The provider to use try and use for this check</param>
+            <param name="entity">The entity to check</param>
+            <param name="permissionTypes">The specific permissions to check for</param>
+            <returns>True if the access type requested is allowed</returns>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityProviderExtensions.TrySetDefaultPermissions``1(Penguin.Security.Abstractions.Interfaces.ISecurityProvider{``0},``0[])">
+            <summary>
+            Ensures that the objects passed in have the system default permissions if the provider is not null
+            </summary>
+            <param name="o">The objects to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Extensions.ISecurityProviderExtensions.TryFind``2(Penguin.Security.Abstractions.Interfaces.ISecurityProvider{``1},``0)">
+            <summary>
+            Returns the requested entity only if the access is allowed or the provider is null
+            </summary>
+            <typeparam name="TReturn">The type of the entity to return</typeparam>
+            <typeparam name="TProvider">The entity type being checked</typeparam>
+            <param name="provider">The provider to use try and use for this check</param>
+            <param name="entity">The entity to check permissions on</param>
+            <returns>The entity, or null if access is explicitely denied</returns>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.AllRoles(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles)">
             <summary>
             Returns all roles from associated groups as well as directly assigned
             </summary>
             <param name="target">The object to retrieve roles for</param>
             <returns>An IEnumerable of distinct roles</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0},``0)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup(Penguin.Security.Abstractions.Interfaces.IHasGroups,Penguin.Security.Abstractions.Interfaces.IGroup)">
             <summary>
             Checks the target group list to see if a group exists
             </summary>
@@ -188,7 +227,7 @@
             <param name="thisGroup">The group to check for</param>
             <returns>If the target has the group in its group list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup``1(Penguin.Security.Abstractions.Interfaces.IHasGroups{``0},System.String)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasGroup(Penguin.Security.Abstractions.Interfaces.IHasGroups,System.String)">
             <summary>
             Checks the target group list to see if a group exists
             </summary>
@@ -196,7 +235,7 @@
             <param name="groupName">The group name to check for</param>
             <returns>If the target has the group in its group list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1},``1)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles,Penguin.Security.Abstractions.Interfaces.IRole)">
             <summary>
             Checks the target role list and roles associated with groups to see if a role exists
             </summary>
@@ -204,7 +243,7 @@
             <param name="thisRole">The role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``1(Penguin.Security.Abstractions.Interfaces.IHasRoles{``0},``0)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasRoles,Penguin.Security.Abstractions.Interfaces.IRole)">
             <summary>
             Checks the target role list to see if a role exists
             </summary>
@@ -212,7 +251,7 @@
             <param name="thisRole">The role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``2(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles{``0,``1},System.String)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles,System.String)">
             <summary>
             Checks the target role list and roles associated with groups to see if a role exists
             </summary>
@@ -220,7 +259,7 @@
             <param name="roleName">The name of the role to check for</param>
             <returns>If the target has the role</returns>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole``1(Penguin.Security.Abstractions.Interfaces.IHasRoles{``0},System.String)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IUserExtensions.HasRole(Penguin.Security.Abstractions.Interfaces.IHasRoles,System.String)">
             <summary>
             Checks the target role list to see if a role exists
             </summary>
@@ -228,47 +267,149 @@
             <param name="roleName">The name of the role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroups`1">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IGroup">
+            <summary>
+            An interface representing a collection of roles
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroups">
             <summary>
             An interface denoting that an object can be assigned to groups
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasGroups`1.Groups">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasGroups.Groups">
             <summary>
             A list of groups that the object belongs to
             </summary>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles`2">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasGroupsAndRoles">
             <summary>
             Used for objects that contain a list of groups, as well as roles
             </summary>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasRoles`1">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IHasRoles">
             <summary>
             An interface denoting that the object can be directly assigned roles as permissions
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasRoles`1.Roles">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IHasRoles.Roles">
             <summary>
             A list of roles that the object belongs to
             </summary>
         </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IUserSession`1">
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IPermissionableEntity">
+            <summary>
+            An interface representing an object that can be assigned permissions
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IPermissionableEntity.Permissions">
+            <summary>
+            A list of permissions assigned to the object
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IRequiresRoleAttribute">
+            <summary>
+            An attribute used to enforce role requirements
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IRequiresRoleAttribute.AllowedRoles">
+            <summary>
+            A list of string ID's for the allowed roles
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IRole">
+            <summary>
+            An interface represending a role, a granular unit of permission
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.ISecurityGroup">
+            <summary>
+            An interface representing the common base type for users, groups, and roles
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.ExternalId">
+            <summary>
+            A unique string ID for the security object
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.Description">
+            <summary>
+            A description of the object
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.Guid">
+            <summary>
+            An unchanging guid representing the object
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission">
+            <summary>
+            An interface representing an individual permission for an object
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission.SecurityGroup">
+            <summary>
+            The security group this permission applies to
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroupPermission.Type">
+            <summary>
+            The type of the permissions this grants
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1">
+            <summary>
+            An interface that processes security permissions for an object
+            </summary>
+            <typeparam name="T">The base type of the objects that this processes</typeparam>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetPublic(`0)">
+            <summary>
+            Assigns public read permissions for the object
+            </summary>
+            <param name="entity">The entity to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetLoggedIn(`0)">
+            <summary>
+            Requires a registered and logged in account for read access
+            </summary>
+            <param name="entity">The entity to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.CheckAccess(`0,Penguin.Security.Abstractions.PermissionTypes)">
+            <summary>
+            Checks the entity for specified permissions against the current session user
+            </summary>
+            <param name="entity">The entity to check</param>
+            <param name="permissionTypes">The specific permissions to check for</param>
+            <returns>True if the access type requested is allowed</returns>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetDefaultPermissions(`0[])">
+            <summary>
+            Ensures that the objects passed in have the system default permissions
+            </summary>
+            <param name="o">The objects to assign permissions to</param>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IUser">
+            <summary>
+            An interface representing a user, containing a collection of groups and roles
+            </summary>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IUserSession">
             <summary>
             An interface representing an active user session
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession`1.IsLocalConnection">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession.IsLocalConnection">
             <summary>
             True if the connection is coming from LocalHost
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession`1.IsLoggedIn">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession.IsLoggedIn">
             <summary>
             There is an active user session
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession`1.LoggedInUser">
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IUserSession.LoggedInUser">
             <summary>
             The current logged in user
             </summary>
@@ -277,6 +418,43 @@
             <summary>
             Defines the type of access that a security group has to a permissionable entity
             </summary>
+        </member>
+        <member name="T:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider">
+            <summary>
+            Checks permission types for an object based on RequiresRole attributes
+            </summary>
+        </member>
+        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.#ctor(Penguin.Security.Abstractions.Interfaces.IUserSession)">
+            <summary>
+            Constructs a new instance using the specified user session
+            </summary>
+            <param name="userSession">The user session to use when checking access</param>
+        </member>
+        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.CheckAccess(System.Object,Penguin.Security.Abstractions.PermissionTypes)">
+            <summary>
+            Checks for access using the provided user session, and Requires Role attributes on the object
+            </summary>
+            <param name="entity">The entity to check access for</param>
+            <param name="permissionTypes">The type of permission being checked for</param>
+            <returns>True if access is allowed</returns>
+        </member>
+        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.SetLoggedIn(System.Object)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="entity">Not implemented</param>
+        </member>
+        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.SetPublic(System.Object)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="entity">Not implemented</param>
+        </member>
+        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.SetDefaultPermissions(System.Object[])">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="o">Not implemented</param>
         </member>
     </members>
 </doc>
