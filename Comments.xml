@@ -109,7 +109,7 @@
             <param name="message">The message</param>
             <param name="innerException">The inner exception</param>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Extensions.IPermissionableEntityExtensions.AllowsAccessType(Penguin.Security.Abstractions.Interfaces.IPermissionableEntity,Penguin.Security.Abstractions.Interfaces.IUser,Penguin.Security.Abstractions.PermissionTypes)">
+        <member name="M:Penguin.Security.Abstractions.Extensions.IEntityPermissionsExtensions.AllowsAccessType(Penguin.Security.Abstractions.Interfaces.IEntityPermissions,Penguin.Security.Abstractions.Interfaces.IUser,Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
             Checks to see if the user specified is allowed to access this object in a given way, based on its groups/roles
             </summary>
@@ -267,6 +267,16 @@
             <param name="roleName">The name of the role to check for</param>
             <returns>If the target has the role in its role list</returns>
         </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.IEntityPermissions">
+            <summary>
+            An interface representing an object that can be assigned permissions
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.IEntityPermissions.Permissions">
+            <summary>
+            A list of permissions assigned to the object
+            </summary>
+        </member>
         <member name="T:Penguin.Security.Abstractions.Interfaces.IGroup">
             <summary>
             An interface representing a collection of roles
@@ -295,16 +305,6 @@
         <member name="P:Penguin.Security.Abstractions.Interfaces.IHasRoles.Roles">
             <summary>
             A list of roles that the object belongs to
-            </summary>
-        </member>
-        <member name="T:Penguin.Security.Abstractions.Interfaces.IPermissionableEntity">
-            <summary>
-            An interface representing an object that can be assigned permissions
-            </summary>
-        </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.IPermissionableEntity.Permissions">
-            <summary>
-            A list of permissions assigned to the object
             </summary>
         </member>
         <member name="T:Penguin.Security.Abstractions.Interfaces.IRequiresRoleAttribute">
