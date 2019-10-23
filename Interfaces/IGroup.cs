@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Penguin.Security.Abstractions.Interfaces
+﻿namespace Penguin.Security.Abstractions.Interfaces
 {
     /// <summary>
     /// An interface representing a collection of roles
@@ -10,5 +6,4 @@ namespace Penguin.Security.Abstractions.Interfaces
     public interface IGroup : ISecurityGroup, IHasRoles
     {
     }
-
 }

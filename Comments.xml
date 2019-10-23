@@ -4,17 +4,17 @@
         <name>Penguin.Security.Abstractions</name>
     </assembly>
     <members>
-        <member name="T:Penguin.Security.Abstractions.Attributes.RequiresRoleAttribute">
+        <member name="T:Penguin.Security.Abstractions.Attributes.EntityRequiresRoleAttribute">
             <summary>
             Used to denote that a Controller Action should require the session user to have any role matching the provided in order to access it
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Attributes.RequiresRoleAttribute.AllowedRoles">
+        <member name="P:Penguin.Security.Abstractions.Attributes.EntityRequiresRoleAttribute.AllowedRoles">
             <summary>
             The roles allowed by this attribute
             </summary>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Attributes.RequiresRoleAttribute.#ctor(System.String[])">
+        <member name="M:Penguin.Security.Abstractions.Attributes.EntityRequiresRoleAttribute.#ctor(System.String[])">
             <summary>
             Mark the Controller Action as only being accessible to users with any of the provided roles
             </summary>
@@ -327,14 +327,14 @@
             An interface representing the common base type for users, groups, and roles
             </summary>
         </member>
-        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.ExternalId">
-            <summary>
-            A unique string ID for the security object
-            </summary>
-        </member>
         <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.Description">
             <summary>
             A description of the object
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.ExternalId">
+            <summary>
+            A unique string ID for the security object
             </summary>
         </member>
         <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityGroup.Guid">
@@ -363,17 +363,28 @@
             </summary>
             <typeparam name="T">The base type of the objects that this processes</typeparam>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetPublic(`0)">
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.AddPermissions(`0,Penguin.Security.Abstractions.PermissionTypes,Penguin.Security.Abstractions.Interfaces.ISecurityGroup)">
             <summary>
-            Assigns public read permissions for the object
+            Adds permissions to the given object
             </summary>
-            <param name="entity">The entity to assign permissions to</param>
+            <param name="entity">The entity to be permissioned</param>
+            <param name="permissionTypes">The type of permission to assign</param>
+            <param name="source">The security group being given the permissions, or null for the current security group</param>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetLoggedIn(`0)">
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.ClonePermissions(`0,`0)">
             <summary>
-            Requires a registered and logged in account for read access
+            Dupilcates the permissions between two objects
             </summary>
-            <param name="entity">The entity to assign permissions to</param>
+            <param name="source">The source of the permissions</param>
+            <param name="destination">Thedestination for the permissions</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.AddPermissions(`0,Penguin.Security.Abstractions.PermissionTypes,System.Guid)">
+            <summary>
+            Adds permissions to the given object
+            </summary>
+            <param name="entity">The entity to be permissioned</param>
+            <param name="permissionTypes">The type of permission to assign</param>
+            <param name="source">The GUID of the security group being given the permissions</param>
         </member>
         <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.CheckAccess(`0,Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
@@ -388,6 +399,28 @@
             Ensures that the objects passed in have the system default permissions
             </summary>
             <param name="o">The objects to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetLoggedIn(`0)">
+            <summary>
+            Requires a registered and logged in account for read access
+            </summary>
+            <param name="entity">The entity to assign permissions to</param>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetPublic(`0)">
+            <summary>
+            Assigns public read permissions for the object
+            </summary>
+            <param name="entity">The entity to assign permissions to</param>
+        </member>
+        <member name="T:Penguin.Security.Abstractions.Interfaces.ISecurityToken">
+            <summary>
+            Represents a security validation attempt
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.Interfaces.ISecurityToken.IsValid">
+            <summary>
+            If true, access should be allowed
+            </summary>
         </member>
         <member name="T:Penguin.Security.Abstractions.Interfaces.IUser">
             <summary>
@@ -414,47 +447,44 @@
             The current logged in user
             </summary>
         </member>
+        <member name="T:Penguin.Security.Abstractions.NameDescriptionPair">
+            <summary>
+            A struct containing both a name and description for a security object
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.NameDescriptionPair.Description">
+            <summary>
+            A description of the object
+            </summary>
+        </member>
+        <member name="P:Penguin.Security.Abstractions.NameDescriptionPair.Name">
+            <summary>
+            The name of the security object
+            </summary>
+        </member>
         <member name="T:Penguin.Security.Abstractions.PermissionTypes">
             <summary>
             Defines the type of access that a security group has to a permissionable entity
             </summary>
         </member>
-        <member name="T:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider">
+        <member name="T:Penguin.Security.Abstractions.Providers.ObjectSecurityProvider">
             <summary>
             Checks permission types for an object based on RequiresRole attributes
             </summary>
         </member>
-        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.#ctor(Penguin.Security.Abstractions.Interfaces.IUserSession)">
+        <member name="M:Penguin.Security.Abstractions.Providers.ObjectSecurityProvider.#ctor(Penguin.Security.Abstractions.Interfaces.IUserSession)">
             <summary>
             Constructs a new instance using the specified user session
             </summary>
             <param name="userSession">The user session to use when checking access</param>
         </member>
-        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.CheckAccess(System.Object,Penguin.Security.Abstractions.PermissionTypes)">
+        <member name="M:Penguin.Security.Abstractions.Providers.ObjectSecurityProvider.CheckAccess(System.Object,Penguin.Security.Abstractions.PermissionTypes)">
             <summary>
             Checks for access using the provided user session, and Requires Role attributes on the object
             </summary>
             <param name="entity">The entity to check access for</param>
             <param name="permissionTypes">The type of permission being checked for</param>
             <returns>True if access is allowed</returns>
-        </member>
-        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.SetLoggedIn(System.Object)">
-            <summary>
-            Not implemented
-            </summary>
-            <param name="entity">Not implemented</param>
-        </member>
-        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.SetPublic(System.Object)">
-            <summary>
-            Not implemented
-            </summary>
-            <param name="entity">Not implemented</param>
-        </member>
-        <member name="M:Penguin.Cms.Modules.Security.SecurityProviders.ObjectSecurityProvider.SetDefaultPermissions(System.Object[])">
-            <summary>
-            Not implemented
-            </summary>
-            <param name="o">Not implemented</param>
         </member>
     </members>
 </doc>

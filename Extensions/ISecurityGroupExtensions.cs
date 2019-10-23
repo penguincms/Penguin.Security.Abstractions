@@ -2,21 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Text;
 
 namespace Penguin.Security.Abstractions.Extensions
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
     public static class ISecurityGroupExtensions
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
-
         /// <summary>
         /// Returns a list of Guids representing the user themselves, all groups, and all roles (inc recursive)
         /// </summary>
         /// <param name="target">The user to check</param>
         /// <returns>A list of Guids representing the user themselves, all groups, and all roles (inc recursive)</returns>
-        public static IEnumerable<Guid> SecurityGroupGuids(this IUser target) 
+        public static IEnumerable<Guid> SecurityGroupGuids(this IUser target)
         {
             Contract.Requires(target != null);
 
@@ -60,7 +59,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The user to retrieve the security groups for</param>
         /// <returns>A list of security group guids for the user containing all groups, and all roles (inc recursive)</returns>
-        public static IEnumerable<Guid> SecurityGroups(this IHasGroupsAndRoles target) 
+        public static IEnumerable<Guid> SecurityGroups(this IHasGroupsAndRoles target)
         {
             Contract.Requires(target != null);
 
@@ -85,7 +84,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// </summary>
         /// <param name="target">The target to check</param>
         /// <returns>A list of Guids representing ONLY the groups (not roles) that an object belongs to</returns>
-        public static IEnumerable<Guid> SecurityGroups(this IHasGroups target) 
+        public static IEnumerable<Guid> SecurityGroups(this IHasGroups target)
         {
             Contract.Requires(target != null);
 
@@ -173,5 +172,3 @@ namespace Penguin.Security.Abstractions.Extensions
         }
     }
 }
-
-

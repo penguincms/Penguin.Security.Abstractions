@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Penguin.Security.Abstractions.Constants
+﻿namespace Penguin.Security.Abstractions.Constants
 {
     /// <summary>
     /// Constant strings for role names

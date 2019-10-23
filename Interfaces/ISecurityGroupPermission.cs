@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Penguin.Security.Abstractions.Interfaces
+﻿namespace Penguin.Security.Abstractions.Interfaces
 {
     /// <summary>
     /// An interface representing an individual permission for an object

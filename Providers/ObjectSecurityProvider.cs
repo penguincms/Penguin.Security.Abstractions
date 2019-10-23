@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-using Penguin.Security.Abstractions;
-using Penguin.Security.Abstractions.Interfaces;
+﻿using Penguin.Security.Abstractions.Attributes;
 using Penguin.Security.Abstractions.Extensions;
-using Penguin.Security.Abstractions.Attributes;
+using Penguin.Security.Abstractions.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
-namespace Penguin.Cms.Modules.Security.SecurityProviders
+namespace Penguin.Security.Abstractions.Providers
 {
     /// <summary>
     /// Checks permission types for an object based on RequiresRole attributes
@@ -25,6 +24,8 @@ namespace Penguin.Cms.Modules.Security.SecurityProviders
             UserSession = userSession;
         }
 
+        void ISecurityProvider<object>.AddPermissions(object entity, PermissionTypes permissionTypes, ISecurityGroup source) => throw new NotImplementedException();
+
         /// <summary>
         /// Checks for access using the provided user session, and Requires Role attributes on the object
         /// </summary>
@@ -33,48 +34,41 @@ namespace Penguin.Cms.Modules.Security.SecurityProviders
         /// <returns>True if access is allowed</returns>
         public bool CheckAccess(object entity, PermissionTypes permissionTypes = PermissionTypes.Read)
         {
-            if(entity is null)
+            if (entity is null)
             {
                 return false;
             }
 
             List<ISecurityGroup> LoggedInSecurity = this.UserSession.LoggedInUser.SecurityGroups().ToList();
 
-            if(LoggedInSecurity.Any(r => r.ExternalId == entity.GetType().Name))
+            if (LoggedInSecurity.Any(r => r.ExternalId == entity.GetType().Name))
             {
                 return true;
             }
 
-            if (this.GetType().GetCustomAttribute<RequiresRoleAttribute>() is RequiresRoleAttribute roleRequirements)
+            if (this.GetType().GetCustomAttribute<EntityRequiresRoleAttribute>() is EntityRequiresRoleAttribute roleRequirements)
             {
-                foreach(string Role in roleRequirements.AllowedRoles)
+                foreach (string Role in roleRequirements.AllowedRoles)
                 {
-                    if(LoggedInSecurity.Any(r => r.ExternalId == Role))
+                    if (LoggedInSecurity.Any(r => r.ExternalId == Role))
                     {
                         return true;
-                    } 
+                    }
                 }
             }
-            
+
             return false;
         }
 
-        /// <summary>
-        /// Not implemented
-        /// </summary>
-        /// <param name="entity">Not implemented</param>
-        public void SetLoggedIn(object entity) => throw new NotImplementedException();
+        void ISecurityProvider<object>.SetDefaultPermissions(params object[] o) => throw new NotImplementedException();
 
-        /// <summary>
-        /// Not implemented
-        /// </summary>
-        /// <param name="entity">Not implemented</param>
-        public void SetPublic(object entity) => throw new NotImplementedException();
+        void ISecurityProvider<object>.SetLoggedIn(object entity) => throw new NotImplementedException();
 
-        /// <summary>
-        /// Not implemented
-        /// </summary>
-        /// <param name="o">Not implemented</param>
-        public void SetDefaultPermissions(params object[] o) => throw new NotImplementedException();
+        void ISecurityProvider<object>.SetPublic(object entity) => throw new NotImplementedException();
+
+        void ISecurityProvider<object>.ClonePermissions(object source, object destination) => throw new NotImplementedException();
+
+        void ISecurityProvider<object>.AddPermissions(object entity, PermissionTypes permissionTypes, Guid source) => throw new NotImplementedException();
+        
     }
 }

@@ -3,15 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
-using System.Text;
 
 namespace Penguin.Security.Abstractions.Extensions
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
     public static class IUserExtensions
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
-
         /// <summary>
         /// Returns all roles from associated groups as well as directly assigned
         /// </summary>
@@ -73,7 +72,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <param name="target">The target to check</param>
         /// <param name="groupName">The group name to check for</param>
         /// <returns>If the target has the group in its group list</returns>
-        public static bool HasGroup(this IHasGroups target, string groupName) 
+        public static bool HasGroup(this IHasGroups target, string groupName)
         {
             Contract.Requires(target != null);
             return target.Groups.Any(g => string.Equals(groupName, g.ExternalId, StringComparison.InvariantCultureIgnoreCase));
@@ -116,7 +115,7 @@ namespace Penguin.Security.Abstractions.Extensions
             Contract.Requires(target != null);
 
             List<IRole> userRoles = target.Roles.ToList() ?? new List<IRole>();
-            
+
             List<IRole> groupRoles = target.Groups?.SelectMany(g => g.Roles)?.ToList() ?? new List<IRole>();
 
             return userRoles.Any(r => string.Equals(r.ExternalId, roleName, StringComparison.InvariantCultureIgnoreCase)) || groupRoles.Any(r => string.Equals(r.ExternalId, roleName, StringComparison.InvariantCultureIgnoreCase));
@@ -135,6 +134,5 @@ namespace Penguin.Security.Abstractions.Extensions
             ICollection<IRole> userRoles = target.Roles.ToList() ?? new List<IRole>();
             return userRoles.Any(r => string.Equals(r.ExternalId, roleName, StringComparison.InvariantCultureIgnoreCase));
         }
-
     }
 }

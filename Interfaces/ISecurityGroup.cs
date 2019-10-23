@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Penguin.Security.Abstractions.Interfaces
 {
@@ -10,15 +8,14 @@ namespace Penguin.Security.Abstractions.Interfaces
     public interface ISecurityGroup
     {
         /// <summary>
-        /// A unique string ID for the security object
-        /// </summary>
-        string ExternalId { get; }
-
-        /// <summary>
         /// A description of the object
         /// </summary>
         string Description { get; }
 
+        /// <summary>
+        /// A unique string ID for the security object
+        /// </summary>
+        string ExternalId { get; }
 
         /// <summary>
         /// An unchanging guid representing the object

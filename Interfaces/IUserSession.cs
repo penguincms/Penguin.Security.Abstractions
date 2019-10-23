@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Penguin.Security.Abstractions.Interfaces
+﻿namespace Penguin.Security.Abstractions.Interfaces
 {
     /// <summary>
     /// An interface representing an active user session
@@ -24,6 +20,4 @@ namespace Penguin.Security.Abstractions.Interfaces
         /// </summary>
         IUser LoggedInUser { get; }
     }
-
-
 }
