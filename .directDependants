@@ -4,6 +4,7 @@ Penguin.Cms.Files.Repositories
 Penguin.Cms.Forms.Repositories
 Penguin.Cms.Images.Repositories
 Penguin.Cms.InternalMessaging.Repositories
+Penguin.Cms.Modules.Dynamic
 Penguin.Cms.Navigation.Repositories
 Penguin.Cms.Security
 Penguin.Cms.Web.Analytics

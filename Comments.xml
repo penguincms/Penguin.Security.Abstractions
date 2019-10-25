@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Penguin.Security.Abstractions</name>
+        <name>Penguin.Security.Abstractions.Local</name>
     </assembly>
     <members>
         <member name="T:Penguin.Security.Abstractions.Attributes.EntityRequiresRoleAttribute">
