@@ -7,5 +7,6 @@
     <Description>Abstractions to use penguin security features without needing penguin entities and repositories</Description>
     <AssemblyName>Penguin.Security.Abstractions</AssemblyName>
     <RootNamespace>Penguin.Security.Abstractions</RootNamespace>
+    <DocumentationFile>Penguin.Security.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
 </Project>
