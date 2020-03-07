@@ -17,13 +17,6 @@ namespace Penguin.Security.Abstractions.Interfaces
         void AddPermissions(T entity, PermissionTypes permissionTypes, ISecurityGroup source = null);
 
         /// <summary>
-        /// Dupilcates the permissions between two objects
-        /// </summary>
-        /// <param name="source">The source of the permissions</param>
-        /// <param name="destination">Thedestination for the permissions</param>
-        void ClonePermissions(T source, T destination);
-
-        /// <summary>
         /// Adds permissions to the given object
         /// </summary>
         /// <param name="entity">The entity to be permissioned</param>
@@ -38,6 +31,13 @@ namespace Penguin.Security.Abstractions.Interfaces
         /// <param name="permissionTypes">The specific permissions to check for</param>
         /// <returns>True if the access type requested is allowed</returns>
         bool CheckAccess(T entity, PermissionTypes permissionTypes = PermissionTypes.Read);
+
+        /// <summary>
+        /// Dupilcates the permissions between two objects
+        /// </summary>
+        /// <param name="source">The source of the permissions</param>
+        /// <param name="destination">Thedestination for the permissions</param>
+        void ClonePermissions(T source, T destination);
 
         /// <summary>
         /// Ensures that the objects passed in have the system default permissions

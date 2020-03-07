@@ -17,7 +17,7 @@ namespace Penguin.Security.Abstractions.Attributes
         /// </summary>
         public List<string> AllowedRoles { get; }
 
-        IReadOnlyList<string> IRequiresRoleAttribute.AllowedRoles => AllowedRoles;
+        IReadOnlyList<string> IRequiresRoleAttribute.AllowedRoles => this.AllowedRoles;
 
         /// <summary>
         /// Mark the Controller Action as only being accessible to users with any of the provided roles

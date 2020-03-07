@@ -20,7 +20,7 @@ namespace Penguin.Security.Abstractions.Exceptions
         /// <param name="missingRoles">The missing roles</param>
         public MissingRoleException(string message, params string[] missingRoles) : base(message)
         {
-            MissingRoles = missingRoles;
+            this.MissingRoles = missingRoles;
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Penguin.Security.Abstractions.Exceptions
         /// <param name="missingRoles">The roles that are missing</param>
         public MissingRoleException(string message, Exception innerException, params string[] missingRoles) : base(message, innerException)
         {
-            MissingRoles = missingRoles;
+            this.MissingRoles = missingRoles;
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Penguin.Security.Abstractions.Exceptions
         /// <param name="missingRoles">The roles that are missing</param>
         public MissingRoleException(params string[] missingRoles)
         {
-            MissingRoles = missingRoles;
+            this.MissingRoles = missingRoles;
         }
     }
 }
