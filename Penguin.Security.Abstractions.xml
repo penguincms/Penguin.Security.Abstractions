@@ -371,13 +371,6 @@
             <param name="permissionTypes">The type of permission to assign</param>
             <param name="source">The security group being given the permissions, or null for the current security group</param>
         </member>
-        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.ClonePermissions(`0,`0)">
-            <summary>
-            Dupilcates the permissions between two objects
-            </summary>
-            <param name="source">The source of the permissions</param>
-            <param name="destination">Thedestination for the permissions</param>
-        </member>
         <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.AddPermissions(`0,Penguin.Security.Abstractions.PermissionTypes,System.Guid)">
             <summary>
             Adds permissions to the given object
@@ -393,6 +386,13 @@
             <param name="entity">The entity to check</param>
             <param name="permissionTypes">The specific permissions to check for</param>
             <returns>True if the access type requested is allowed</returns>
+        </member>
+        <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.ClonePermissions(`0,`0)">
+            <summary>
+            Dupilcates the permissions between two objects
+            </summary>
+            <param name="source">The source of the permissions</param>
+            <param name="destination">Thedestination for the permissions</param>
         </member>
         <member name="M:Penguin.Security.Abstractions.Interfaces.ISecurityProvider`1.SetDefaultPermissions(`0[])">
             <summary>
