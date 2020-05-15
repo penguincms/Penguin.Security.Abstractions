@@ -42,5 +42,17 @@ namespace Penguin.Security.Abstractions.Exceptions
         {
             this.MissingRoles = missingRoles;
         }
+
+        internal MissingRoleException()
+        {
+        }
+
+        internal MissingRoleException(string message) : base(message)
+        {
+        }
+
+        internal MissingRoleException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

@@ -25,32 +25,32 @@
             Constant strings for role names
             </summary>
         </member>
-        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.AdminAccess">
+        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.ADMIN_ACCESS">
             <summary>
             This role allows a user or group to access the administration panel
             </summary>
         </member>
-        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.AllUsers">
+        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.ALL_USERS">
             <summary>
             This role is the base for all site users
             </summary>
         </member>
-        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.Guest">
+        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.GUEST">
             <summary>
             This role represents users that are not logged in
             </summary>
         </member>
-        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.LoggedIn">
+        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.LOGGED_IN">
             <summary>
             This role represents users that are logged in
             </summary>
         </member>
-        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.SysAdmin">
+        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.SYS_ADMIN">
             <summary>
             This role is grants access to all aspects of the web site
             </summary>
         </member>
-        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.UserManager">
+        <member name="F:Penguin.Security.Abstractions.Constants.RoleNames.USER_MANAGER">
             <summary>
             This role allows access to functions that control other users
             </summary>
