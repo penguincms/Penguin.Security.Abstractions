@@ -15,6 +15,7 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <param name="user">The user to check for access</param>
         /// <param name="type">The type of access to check for</param>
         /// <returns>Whether or not the given user is allowed the requested access type</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "user.SecurityGroups() incorrectly reporting error")]
         public static bool AllowsAccessType(this IEntityPermissions source, IUser user, PermissionTypes type)
         {
             if (source is null)

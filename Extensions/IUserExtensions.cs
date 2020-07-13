@@ -18,7 +18,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>An IEnumerable of distinct roles</returns>
         public static IEnumerable<IRole> AllRoles(this IHasGroupsAndRoles target)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             List<IRole> allRoles = new List<IRole>();
 
@@ -61,8 +64,11 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>If the target has the group in its group list</returns>
         public static bool HasGroup(this IHasGroups target, IGroup thisGroup)
         {
-            Contract.Requires(target != null);
-            Contract.Requires(thisGroup != null);
+            if (thisGroup is null)
+            {
+                throw new ArgumentNullException(nameof(thisGroup));
+            }
+
             return target.HasGroup(thisGroup.ExternalId);
         }
 
@@ -74,7 +80,11 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>If the target has the group in its group list</returns>
         public static bool HasGroup(this IHasGroups target, string groupName)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
+
             return target.Groups.Any(g => string.Equals(groupName, g.ExternalId, StringComparison.InvariantCultureIgnoreCase));
         }
 
@@ -86,8 +96,11 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>If the target has the role in its role list</returns>
         public static bool HasRole(this IHasGroupsAndRoles target, IRole thisRole)
         {
-            Contract.Requires(target != null);
-            Contract.Requires(thisRole != null);
+            if (thisRole is null)
+            {
+                throw new ArgumentNullException(nameof(thisRole));
+            }
+
             return target.HasRole(thisRole.ExternalId);
         }
 
@@ -99,8 +112,11 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>If the target has the role in its role list</returns>
         public static bool HasRole(this IHasRoles target, IRole thisRole)
         {
-            Contract.Requires(target != null);
-            Contract.Requires(thisRole != null);
+            if (thisRole is null)
+            {
+                throw new ArgumentNullException(nameof(thisRole));
+            }
+
             return target.HasRole(thisRole.ExternalId);
         }
 
@@ -112,7 +128,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>If the target has the role</returns>
         public static bool HasRole(this IHasGroupsAndRoles target, string roleName)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             List<IRole> userRoles = target.Roles.ToList() ?? new List<IRole>();
 
@@ -129,7 +148,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>If the target has the role in its role list</returns>
         public static bool HasRole(this IHasRoles target, string roleName)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             ICollection<IRole> userRoles = target.Roles.ToList() ?? new List<IRole>();
             return userRoles.Any(r => string.Equals(r.ExternalId, roleName, StringComparison.InvariantCultureIgnoreCase));

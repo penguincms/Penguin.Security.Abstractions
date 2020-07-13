@@ -17,7 +17,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>A list of Guids representing the user themselves, all groups, and all roles (inc recursive)</returns>
         public static IEnumerable<Guid> SecurityGroupGuids(this IUser target)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             yield return target.Guid;
 
@@ -39,9 +42,12 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>A list of security groups for the user containing themselves, all groups, and all roles (inc recursive)</returns>
         public static IEnumerable<ISecurityGroup> SecurityGroups(this IUser target)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
-            yield return target as ISecurityGroup;
+            yield return target;
 
             foreach (ISecurityGroup g in GetGroups(target))
             {
@@ -61,7 +67,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>A list of security group guids for the user containing all groups, and all roles (inc recursive)</returns>
         public static IEnumerable<Guid> SecurityGroups(this IHasGroupsAndRoles target)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             if (target is ISecurityGroup te)
             {
@@ -86,7 +95,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>A list of Guids representing ONLY the groups (not roles) that an object belongs to</returns>
         public static IEnumerable<Guid> SecurityGroups(this IHasGroups target)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             if (target is ISecurityGroup te)
             {
@@ -106,7 +118,10 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>A list of Guids representing ONLY the roles (not groups) that an object belongs to</returns>
         public static IEnumerable<Guid> SecurityGroups(this IHasRoles target)
         {
-            Contract.Requires(target != null);
+            if (target is null)
+            {
+                throw new ArgumentNullException(nameof(target));
+            }
 
             if (target is ISecurityGroup te)
             {

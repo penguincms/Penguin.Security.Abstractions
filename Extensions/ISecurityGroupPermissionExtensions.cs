@@ -14,6 +14,11 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>True if the access should be granted</returns>
         public static bool HasPermission(this ISecurityGroupPermission securityGroupPermission, PermissionTypes type)
         {
+            if (securityGroupPermission is null)
+            {
+                throw new System.ArgumentNullException(nameof(securityGroupPermission));
+            }
+
             return securityGroupPermission.Type.HasFlag(type);
         }
     }
