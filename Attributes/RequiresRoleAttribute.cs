@@ -9,7 +9,6 @@ namespace Penguin.Security.Abstractions.Attributes
     /// <summary>
     /// Used to denote that a Controller Action should require the session user to have any role matching the provided in order to access it
     /// </summary>
-    [SuppressMessage("Design", "CA1056:Uri properties should not be strings")]
     public class EntityRequiresRoleAttribute : Attribute, IRequiresRoleAttribute
     {
         /// <summary>
