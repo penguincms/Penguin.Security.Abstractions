@@ -42,7 +42,8 @@ namespace Penguin.Security.Abstractions.Extensions
         /// <returns>True if the access type requested is allowed</returns>
         public static bool TryCheckAccess<T>(this ISecurityProvider<T> provider, T entity, PermissionTypes permissionTypes = PermissionTypes.Read)
         {
-            if (provider is null) { return true; }
+            if (provider is null)
+            { return true; }
 
             return provider.CheckAccess(entity, permissionTypes);
         }
