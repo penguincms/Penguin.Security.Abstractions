@@ -24,15 +24,9 @@ namespace Penguin.Security.Abstractions.Providers
             this.UserSession = userSession;
         }
 
-        void ISecurityProvider<object>.AddPermissions(object entity, PermissionTypes permissionTypes, ISecurityGroup source)
-        {
-            throw new NotImplementedException();
-        }
+        void ISecurityProvider<object>.AddPermissions(object entity, PermissionTypes permissionTypes, ISecurityGroup source) => throw new NotImplementedException();
 
-        void ISecurityProvider<object>.AddPermissions(object entity, PermissionTypes permissionTypes, Guid source)
-        {
-            throw new NotImplementedException();
-        }
+        void ISecurityProvider<object>.AddPermissions(object entity, PermissionTypes permissionTypes, Guid source) => throw new NotImplementedException();
 
         /// <summary>
         /// Checks for access using the provided user session, and Requires Role attributes on the object
@@ -68,24 +62,12 @@ namespace Penguin.Security.Abstractions.Providers
             return false;
         }
 
-        void ISecurityProvider<object>.ClonePermissions(object source, object destination)
-        {
-            throw new NotImplementedException();
-        }
+        void ISecurityProvider<object>.ClonePermissions(object source, object destination) => throw new NotImplementedException();
 
-        void ISecurityProvider<object>.SetDefaultPermissions(params object[] o)
-        {
-            throw new NotImplementedException();
-        }
+        void ISecurityProvider<object>.SetDefaultPermissions(params object[] o) => throw new NotImplementedException();
 
-        void ISecurityProvider<object>.SetLoggedIn(object entity)
-        {
-            throw new NotImplementedException();
-        }
+        void ISecurityProvider<object>.SetLoggedIn(object entity) => throw new NotImplementedException();
 
-        void ISecurityProvider<object>.SetPublic(object entity)
-        {
-            throw new NotImplementedException();
-        }
+        void ISecurityProvider<object>.SetPublic(object entity) => throw new NotImplementedException();
     }
 }
