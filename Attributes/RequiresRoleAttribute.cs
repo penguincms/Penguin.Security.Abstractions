@@ -13,9 +13,8 @@ namespace Penguin.Security.Abstractions.Attributes
         /// <summary>
         /// The roles allowed by this attribute
         /// </summary>
-        public List<string> AllowedRoles { get; }
-
-        IReadOnlyList<string> IRequiresRoleAttribute.AllowedRoles => this.AllowedRoles;
+        public string[] AllowedRoles { get; }
+        IReadOnlyList<string> IRequiresRoleAttribute.AllowedRoles => AllowedRoles;
 
         /// <summary>
         /// Mark the Controller Action as only being accessible to users with any of the provided roles
@@ -23,7 +22,7 @@ namespace Penguin.Security.Abstractions.Attributes
         /// <param name="roleNames"></param>
         public EntityRequiresRoleAttribute(params string[] roleNames)
         {
-            this.AllowedRoles = roleNames.ToList();
+            this.AllowedRoles = roleNames.ToArray();
         }
     }
 }
