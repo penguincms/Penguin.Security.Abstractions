@@ -2,11 +2,12 @@
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Security.Abstractions</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCms/Penguin.Security.Abstractions</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Abstractions to use penguin security features without needing penguin entities and repositories</Description>
     <AssemblyName>Penguin.Security.Abstractions</AssemblyName>
     <RootNamespace>Penguin.Security.Abstractions</RootNamespace>
     <DocumentationFile>Penguin.Security.Abstractions.xml</DocumentationFile>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 </Project>
