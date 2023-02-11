@@ -14,6 +14,7 @@ namespace Penguin.Security.Abstractions.Attributes
         /// The roles allowed by this attribute
         /// </summary>
         public string[] AllowedRoles { get; }
+
         IReadOnlyList<string> IRequiresRoleAttribute.AllowedRoles => AllowedRoles;
 
         /// <summary>
